@@ -1,4 +1,4 @@
-[JavaIO](https://raw.githubusercontent.com/tsinghualiji/java/master/images/J2SE_IO.png)
+![JavaIO](https://raw.githubusercontent.com/tsinghualiji/java/master/images/J2SE_IO.png)
 
 ##流
 
