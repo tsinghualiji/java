@@ -35,11 +35,11 @@
 - 声明多个泛型类型
     若一个类中多个字段需要不同的泛型声明，则在声明类的时候指定多个泛型类型即可
     public interface IDAO<PK, T> {
-        PK add(T t);
-        void remove(PK id);
-        void update(PK id, T t);
-        T get(PK id);
-    }
+        PK add(T t);  
+        void remove(PK id);  
+        void update(PK id, T t);    
+        T get(PK id);    
+    }    
 
 ##泛型的上限与下限
 
@@ -51,10 +51,10 @@
     1. 声明对象：类名<? super 类> 对象名称
     2. 定义类：类名<泛型标签 extends类>{}
 
-    public static void  show(List<? extends Number> l){
-    }
-    public static void  show(List<? super String> l){
-    }
+    public static void  show(List<? extends Number> l){    
+    }    
+    public static void  show(List<? super String> l){    
+    }    
 
 ##泛型和子类继承的限制
 
@@ -63,48 +63,48 @@
 - 但是在父类泛型类型和子泛型类型之间不存在这种关系：
     1. 类<Number> 对象 = new 类<Integer>();×
 
-    Object obj = new Person();√
-    Person<Object> p = new Person<String>();×
+    Object obj = new Person();√    
+    Person<Object> p = new Person<String>();×    
 
 ##泛型接口
 
 - java5后，可以声明泛型接口，声明方式和声明泛型类是一样的。
-    1. public interface IDAO<T>{}
+    1. public interface IDAO<T>{}    
 - 泛型接口子类有两种方式：
     1. 直接在子类后申明泛型；
     1. 在子类实现的接口中给出具体的泛型类型
 
-    public class DaoImpl<T> implements IDAO<T>{}
-    public class DaoImpl implements IDAO<String> {}
+    public class DaoImpl<T> implements IDAO<T>{}    
+    public class DaoImpl implements IDAO<String> {}    
 
 ##泛型方法
 - 方法中可定义泛型参数，形参的参数类型就是实参的类型。
 - 格式：
     <泛型标签> 返回值类型 方法名([泛型标签 参数]...)
 
-    public static <T> T show(T param){
-        return param;
-    }
+    public static <T> T show(T param){    
+        return param;    
+    }    
 
 ##泛型的嵌套
 
 - 可以从一个类的泛型中指向另一个类的泛型
 
     public class Demo{
-        public static void main(String[] args) {
-            Map<String,String> map = new HashMap<>();
-            map.put("1", "A");
-            map.put("2", "B");
-            map.put("3", "C");
-            map.put("4", "D");
-        Set<Map.Entry<String, String>>  set = map.entrySet();
-        Iterator<Map.Entry<String, String>> it = set.iterator();
-        while(it.hasNext()) {
-            Map.Entry<String, String> entry = it.next();
-    System.out.println(entry.getKey() +"-->" + entry.getValue());
-            }
-        }
-    }
+        public static void main(String[] args) {    
+            Map<String,String> map = new HashMap<>();    
+            map.put("1", "A");    
+            map.put("2", "B");    
+            map.put("3", "C");    
+            map.put("4", "D");    
+        Set<Map.Entry<String, String>>  set = map.entrySet();    
+        Iterator<Map.Entry<String, String>> it = set.iterator();    
+        while(it.hasNext()) {    
+            Map.Entry<String, String> entry = it.next();    
+    System.out.println(entry.getKey() +"-->" + entry.getValue());    
+            }    
+        }    
+    }    
 
 ##泛型的擦除
 
@@ -112,35 +112,35 @@
 - 当把一个具有泛型信息的对象赋给另一个没有泛型信息的变量时，则所有在尖括号之间的类型信息都被扔掉。
 比如List<String> 类型转换成List，则该List对集合元素的类型检查变成了变量的上限即Object。
     
-    class Num<T extends Number>{
-        private T t;
-        public Num(T t) {
-            this.t = t;
-        }
+    class Num<T extends Number>{    
+        private T t;    
+        public Num(T t) {    
+            this.t = t;    
+        }    
         。。。。getter/setter。。。。    
     }
-    public class Demo {
-        public static void main(String[] args) {
-            Num<Integer> n = new Num<>(5);
-            Integer i = n.getT();
-            Num n2 = n;//会丢掉泛型信息
-            Number num = ();
-            //Integer i = n2.gn2.getTetT();
-        }
-    }
-
-    public class Demo {
-        public static void main(String[] args) {
-            List<Integer> li = new ArrayList<>();
-            li.add(1);
-            List<String> ls = null;
-            //ls = li;不能转换
-            List list = li;
-            ls = list;//不会报错,只有未经检查警告,此时list实际引用的是List<Integer>
-            System.out.println("-->" + ls.get(0));//企图当做String类型对象取出
-        }
-    }
-
+    public class Demo {    
+        public static void main(String[] args) {    
+            Num<Integer> n = new Num<>(5);    
+            Integer i = n.getT();    
+            Num n2 = n;//会丢掉泛型信息    
+            Number num = ();    
+            //Integer i = n2.gn2.getTetT();    
+        }    
+    }    
+        
+    public class Demo {    
+        public static void main(String[] args) {    
+            List<Integer> li = new ArrayList<>();    
+            li.add(1);    
+            List<String> ls = null;    
+            //ls = li;不能转换    
+            List list = li;    
+            ls = list;//不会报错,只有未经检查警告,此时list实际引用的是List<Integer>    
+            System.out.println("-->" + ls.get(0));//企图当做String类型对象取出    
+        }    
+    }    
+    
 ##泛型开发实例
 
 - 泛型接口
@@ -149,25 +149,26 @@
 - 泛型接口实现类
     1. GenericDAOImpl
         1. 实现泛型接口里的所有抽象方法
+
+    public interface IGenericDAO<T> {    
+        T get(Serializable id);    
+        T save(T newInstance);    
+        void remove(Serializable id);    
+        void update(T object);    
+    }    
+    public class GenericDAOImpl<T> implements IGenericDAO<T>{    
+        public T get(Serializable id) {    
+            return null;    
+        }    
+        public T save(T newInstance) {    
+            return null;    
+        }    
+        public void remove(Serializable id) {    
+        }    
+        public void update(T object) {    
+        }    
+        public List<T> query() {    
+            return null;    
+        }    
+    }    
     
-    public interface IGenericDAO<T> {
-        T get(Serializable id);
-        T save(T newInstance);
-        void remove(Serializable id);
-        void update(T object);
-    }
-    public class GenericDAOImpl<T> implements IGenericDAO<T>{
-        public T get(Serializable id) {
-            return null;
-        }
-        public T save(T newInstance) {
-            return null;
-        }
-        public void remove(Serializable id) {
-        }
-        public void update(T object) {
-        }
-        public List<T> query() {
-            return null;
-        }
-    }
