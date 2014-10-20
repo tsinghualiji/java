@@ -1,3 +1,5 @@
+[JavaIO](https://raw.githubusercontent.com/tsinghualiji/java/master/images/J2SE_IO.png)
+
 ##流
 
 - 数据流是一串连续不断的数据的集合,就像水管里的水流,在水管的一端一点一点地供水,而在水管的另一端看到的是一股连续不断的水流
