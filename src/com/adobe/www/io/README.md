@@ -10,7 +10,8 @@
 - 按功能的不同可分为节点流和处理流；
 	1. 节点流：直接操作目标设备，例如：磁盘或一块内存区域。
 	1. 处理流：通过操作节点流,从而间接完成输入或输出功能的流。处理流是的存在是建立在一个已经存在的输入流或输出流的基础之上的。
-- 所有流都继承于以下四种抽象流类型的某一种： 
+- 所有流都继承于以下四种抽象流类型的某一种：
+
 |流|字节流|字符流|
 |------|-----|-----|
 |输入流|InputStream|Reader|
@@ -43,3 +44,52 @@
         }
         System.out.println("搞定");
     }
+
+##内存操作流-字节
+
+- 之前的文件操作流是以文件的输入输出为主的，当输出的位置变成了内存，那么就称为内存操作流。此时得使用内存流完成内存的输入和输出操作。
+
+- 如果程序运行过程中要产生一些临时文件，可采用虚拟文件方式实现；
+
+- 直接操作磁盘的文件很耗性能,使用内存流可以提升性能;jdk里提供了内存流可实现类似于内存虚拟文件的功能。
+	1. ByteArrayInputStream：将内容写到内存中
+	1. ByteArrayOutputStream：将内存中的数据写出
+
+- ByteArrayInputStream：构造方法：
+	1. public ByteArrayInputStream(byte[] buf):全部内容
+	1. public ByteArrayInputStream(byte[] buf,int offset,int length)：指定范围的内容
+
+- ByteArrayOutputStream:
+
+##内存操作流-字符
+
+- CharArrayReader 
+- CharArrayWriter
+	1. 此类实现一个可用作 Writer 的字符缓冲区。缓冲区会随向流中写入数据而自动增长。可使用 toCharArray() 和 toString() 获取数据
+
+##打印流
+
+- 思考：如果现在要想完成一个字符串或者是boolean型或者是字符型的数据输出使用OutputStream是否方便？
+- 肯定是不方便的，因为OutputStream中只能操作字节数据，所以其他的数据类型很难操作，那么在Java的IO包中为了解决这种问题增加了两种类：PrintStream、PrintWriter。
+- 打印流有非常好的打印功能，可以打印任何的数据类型。如，整数，小树，字符串等。
+- 观察PrintStream类的构造：
+	1. public PrintStream(File file) throws FileNotFoundException
+	1. public PrintStream(OutputStream out)
+		1. 虽然PrintStream是OutputStream的子类，但是在实例化的时候依然需要一个OutputStream的对象。
+- PrintWriter和PrintStream都属于输出流，分别针对字符和字节
+- PrintWriter和PrintStream重载的print()和println()用于多种数据类型的输出
+	1. print()里的参数不能为空；println()可以
+- PrintWriter和PrintStream输出操作不抛出异常
+- PrintStream调用println方法有自动flush功能
+
+##格式化输出
+
+- Java5后，PrintStream类多了printf()方法用于格式化输出操作。但是格式化输出的时候必须指定输出数据的类型
+
+|字符|描述|
+|----|----|
+|%s|表示内容是字符串|
+|%d|表示内容是整数|
+|%f|表示内容是小数|
+|%c|表示内容是字符|
+	当然你也可以全部使用“%s”来表示所有的数据类型
