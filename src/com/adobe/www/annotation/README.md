@@ -105,31 +105,31 @@ public class AssignmentProcess extends AbstractProcessor {
 ##实例分析
 
 下面通过一个具体的实例来分析说明在实践中如何来使用和处理注解。假定有一个公司的雇员信息系统，从访问控制的角度出发，对雇员的工资的更新只能由具有特定角色的用户才能完成。考虑到访问控制需求的普遍性，可以定义一个注解来让开发人员方便的在代码中声明访问控制权限。
-~~
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-public @interface RequiredRoles {
-    String[] value();
-}
-~~
+
+	@Retention(RetentionPolicy.RUNTIME)
+	@Target(ElementType.METHOD)
+	public @interface RequiredRoles {
+	    String[] value();
+	}
+
 下一步则是如何对注解进行处理，这里使用的Java的反射API并结合动态代理。下面是动态代理中的InvocationHandler接口的实现。
-~~
-public class AccessInvocationHandler<T> implements InvocationHandler {
-    final T accessObj;
-    public AccessInvocationHandler(T accessObj) {
-        this.accessObj = accessObj;
-    }
-    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        RequiredRoles annotation = method.getAnnotation(RequiredRoles.class); //通过反射API获取注解
-        if (annotation != null) {
-            String[] roles = annotation.value();
-            String role = AccessControl.getCurrentRole();
-            if (!Arrays.asList(roles).contains(role)) {
-                throw new AccessControlException("The user is not allowed to invoke this method.");
-            }
-        }
-        return method.invoke(accessObj, args);
-    } 
-} 
-~~
+
+	public class AccessInvocationHandler<T> implements InvocationHandler {
+	    final T accessObj;
+	    public AccessInvocationHandler(T accessObj) {
+	        this.accessObj = accessObj;
+	    }
+	    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+	        RequiredRoles annotation = method.getAnnotation(RequiredRoles.class); //通过反射API获取注解
+	        if (annotation != null) {
+	            String[] roles = annotation.value();
+	            String role = AccessControl.getCurrentRole();
+	            if (!Arrays.asList(roles).contains(role)) {
+	                throw new AccessControlException("The user is not allowed to invoke this method.");
+	            }
+	        }
+	        return method.invoke(accessObj, args);
+	    } 
+	} 
+
 在具体使用的时候，首先要通过Proxy.newProxyInstance方法创建一个EmployeeGateway的接口的代理类，使用该代理类来完成实际的操作。
