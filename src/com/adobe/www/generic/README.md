@@ -93,19 +93,19 @@
     public class Demo{
         public static void main(String[] args) {    
             Map<String,String> map = new HashMap<>();    
-            map.put("1", "A");    
-            map.put("2", "B");    
-            map.put("3", "C");    
-            map.put("4", "D");    
-        Set<Map.Entry<String, String>>  set = map.entrySet();    
-        Iterator<Map.Entry<String, String>> it = set.iterator();    
-        while(it.hasNext()) {    
-            Map.Entry<String, String> entry = it.next();    
-    System.out.println(entry.getKey() +"-->" + entry.getValue());    
-            }    
-        }    
-    }    
-
+            map.put("1", "A");     
+            map.put("2", "B");     
+            map.put("3", "C");     
+            map.put("4", "D");     
+        Set<Map.Entry<String, String>>  set = map.entrySet();     
+        Iterator<Map.Entry<String, String>> it = set.iterator();     
+        while(it.hasNext()) {     
+            Map.Entry<String, String> entry = it.next();     
+    System.out.println(entry.getKey() +"-->" + entry.getValue());     
+            }     
+        }     
+    }     
+  
 ##泛型的擦除
 
 - 在严格的泛型代码里，带泛型声明的类总应该带着类型参数。但是为了和老的Java代码保持一致，也允许在使用带泛型声明的类时不指定类型参数，若没有为这个泛型类指定类型参数则该类型参数被称做一个原始类型，默认是该声明参数时指定的最上限类型；
@@ -149,26 +149,26 @@
 - 泛型接口实现类
     1. GenericDAOImpl
         1. 实现泛型接口里的所有抽象方法
-
-    public interface IGenericDAO<T> {    
-        T get(Serializable id);    
-        T save(T newInstance);    
-        void remove(Serializable id);    
-        void update(T object);    
-    }    
-    public class GenericDAOImpl<T> implements IGenericDAO<T>{    
-        public T get(Serializable id) {    
-            return null;    
-        }    
-        public T save(T newInstance) {    
-            return null;    
-        }    
-        public void remove(Serializable id) {    
-        }    
-        public void update(T object) {    
-        }    
-        public List<T> query() {    
-            return null;    
-        }    
-    }    
+ 
+    public interface IGenericDAO<T> {     
+        T get(Serializable id);     
+        T save(T newInstance);     
+        void remove(Serializable id);     
+        void update(T object);     
+    }     
+    public class GenericDAOImpl<T> implements IGenericDAO<T>{     
+        public T get(Serializable id) {     
+            return null;     
+        }     
+        public T save(T newInstance) {     
+            return null;     
+        }     
+        public void remove(Serializable id) {     
+        }     
+        public void update(T object) {     
+        }     
+        public List<T> query() {     
+            return null;     
+        }     
+    }     
     
