@@ -29,11 +29,11 @@
  
  ##Java 7 新特性： 自动关闭资源的try语句
 
-	public static void afterjava7(String srcPath, String destPath) {
-		try (
-			InputStream is = new FileInputStream(srcPath);
-			OutputStream os = new FileOutputStream(destPath);
-		) {
+    public static void afterjava7(String srcPath, String destPath) {
+        try (
+        	InputStream is = new FileInputStream(srcPath);
+            OutputStream os = new FileOutputStream(destPath);
+            ) {
 				byte[] bys = new byte[1024];
 				int len = 0;
 				while ((len = is.read(bys)) != -1) {
