@@ -34,13 +34,13 @@
         	InputStream is = new FileInputStream(srcPath);
             OutputStream os = new FileOutputStream(destPath);
             ) {
-				byte[] bys = new byte[1024];
-				int len = 0;
-				while ((len = is.read(bys)) != -1) {
-					os.write(bys, 0, len);
-				}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println("搞定");
+                byte[] bys = new byte[1024];
+                int len = 0;
+                while ((len = is.read(bys)) != -1) {
+                    os.write(bys, 0, len);
+                }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("搞定");
     }
