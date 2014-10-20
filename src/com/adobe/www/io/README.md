@@ -48,17 +48,13 @@
 ##内存操作流-字节
 
 - 之前的文件操作流是以文件的输入输出为主的，当输出的位置变成了内存，那么就称为内存操作流。此时得使用内存流完成内存的输入和输出操作。
-
 - 如果程序运行过程中要产生一些临时文件，可采用虚拟文件方式实现；
-
 - 直接操作磁盘的文件很耗性能,使用内存流可以提升性能;jdk里提供了内存流可实现类似于内存虚拟文件的功能。
 	1. ByteArrayInputStream：将内容写到内存中
 	1. ByteArrayOutputStream：将内存中的数据写出
-
 - ByteArrayInputStream：构造方法：
 	1. public ByteArrayInputStream(byte[] buf):全部内容
 	1. public ByteArrayInputStream(byte[] buf,int offset,int length)：指定范围的内容
-
 - ByteArrayOutputStream:
 
 ##内存操作流-字符
@@ -99,10 +95,8 @@
 - 又称为线程通讯流，主要作用是可以进行两个线程之间的通讯
 	1. PipedOutputStream：管道输出流
 	1. PipedInputStream：管道输入流
-
 - PipedOutputStream中有方法:
 	1. void connect(PipedInputStream pis) throws IOException:用于连接管道
-
 - PipedInputStream中有方法:
 	1. void connect(PipedOutputStream pos) throws IOException:用于连接管道
 
@@ -136,14 +130,10 @@
 - 字节流---> 字符流
 	1. InputStreamReader 字节输入流-->字符输入流
 	1. OutputStreamWriter 字节输出流-->字符输出流
-
 - InputStreamReader 需要和InputStream“套接”；
-
 - OutputStreamWriter 需要和OutputStream“套接”
-
 - 转换流在构造时可以指定其编码集合
 	1. InputStreamReader in  = new InputStreamReader(Sytem.in,"ISO8859_1");
-
 - 为了达到最高效率，可要考虑在 BufferedReader 内包装 InputStreamReader。例如： 
 	1. BufferedReader in  = new BufferedReader(new InputStreamReader(System.in));
 
@@ -223,7 +213,6 @@
 	1. 常用方法
 		1. ObjectOutputStream(OutputStream out)  创建写入指定 OutputStream 的 ObjectOutputStream对象。
 		1. void writeObject(Object obj) 输出对象。 
-
 - ObjectInputStream
 	1. 把被序列化的对象给反序列化回来
 	1. 常用方法
@@ -244,9 +233,7 @@
 - gzip用于unix系统的文件压缩，Linux中经常使用到*.gz就是gzip格式。
 	1. GZIP压缩输出流：GZIPOutputStream
 	1. GZIP压缩输入流：GZIPInputStream
-
 - ZipEntry & ZipOutputStream
-
 	1. ZipEntry用于表示 ZIP 文件条目,也就是压缩文件中的每一个子文件。
 		1. ZipEntry(String name)使用指定ZipEntry名称创建新的 ZipEntry对象。
 		1. boolean isDirectory()判断该ZipEntry是不是目录。 
