@@ -104,16 +104,16 @@ ArrayList 和Vector是采用数组方式存储数据，此数组元素数大于�
 
 
 ####HashMap与TreeMap
-        (注)
-       文章出处：http://www.diybl.com/course/3_program/java/javaxl/200875/130233.html
+      (注)
+      文章出处：http://www.diybl.com/course/3_program/java/javaxl/200875/130233.html
 
-       1、HashMap通过hashcode对其内容进行快速查找，而TreeMap中所有的元素都保持着某种固定的顺序，如果你需要得到一个有序的结果你就应该使用TreeMap（HashMap中元素的排列顺序是不固定的）。
+      1、HashMap通过hashcode对其内容进行快速查找，而TreeMap中所有的元素都保持着某种固定的顺序，如果你需要得到一个有序的结果你就应该使用TreeMap（HashMap中元素的排列顺序是不固定的）。
 
 ####HashMap中元素的排列顺序是不固定的）。
 
-        2、  HashMap通过hashcode对其内容进行快速查找，而TreeMap中所有的元素都保持着某种固定的顺序，如果你需要得到一个有序的结果你就应该 使用TreeMap（HashMap中元素的排列顺序是不固定的）。集合框架”提供两种常规的Map实现：HashMap和TreeMap (TreeMap实现SortedMap接口)。
+      2、HashMap通过hashcode对其内容进行快速查找，而TreeMap中所有的元素都保持着某种固定的顺序，如果你需要得到一个有序的结果你就应该 使用TreeMap（HashMap中元素的排列顺序是不固定的）。集合框架”提供两种常规的Map实现：HashMap和TreeMap (TreeMap实现SortedMap接口)。
 
-         3、在Map 中插入、删除和定位元素，HashMap 是最好的选择。但如果您要按自然顺序或自定义顺序遍历键，那么TreeMap会更好。使用HashMap要求添加的键类明确定义了hashCode()和 equals()的实现。　　这个TreeMap没有调优选项，因为该树总处于平衡状态。
+      3、在Map 中插入、删除和定位元素，HashMap 是最好的选择。但如果您要按自然顺序或自定义顺序遍历键，那么TreeMap会更好。使用HashMap要求添加的键类明确定义了hashCode()和 equals()的实现。　　这个TreeMap没有调优选项，因为该树总处于平衡状态。
 
       结过研究，在原作者的基础上我还发现了一点，二树map一样，但顺序不一样，导致hashCode()不一样。
       同样做测试：
