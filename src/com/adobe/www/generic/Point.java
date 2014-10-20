@@ -1,8 +1,12 @@
-package com.adobe.www.generic;
+package generic;
 
-public class Point <T>{//å®šä¹‰ä¸€ä¸ªç±»çš„é€‚åˆï¼Œé‡‡ç”¨Tè¡¨ç¤ºä¸€ç§ç±»å‹ï¼Œä»…ä»…è¡¨ç¤ºå ä½ç¬¦,ä½†æ˜¯æ­¤æ—¶çœŸæ­£çš„ç±»å‹å°šæœªç¡®å®šï¼Œä½¿ç”¨æ—¶æ‰èƒ½ç¡®å®šã€‚
-
+/**
+ * ×ø±êµã
+ */
+public class Point<T> {//¶¨ÒåÒ»¸öÀàµÄÊ±ºò,²ÉÓÃTÀ´±íÊ¾Ò»ÖÖÀàĞÍ,½ö½ö±íÊ¾Õ¼Î»·û;,µ«ÊÇ´ËÊ±ÕæÕıµÄÀàĞÍÉĞÎ´È·¶¨,Ê¹ÓÃµÄÊ±ºò²ÅÈ·¶¨
+	
 	private T x;
+	private T y;
 	public T getX() {
 		return x;
 	}
@@ -15,6 +19,4 @@ public class Point <T>{//å®šä¹‰ä¸€ä¸ªç±»çš„é€‚åˆï¼Œé‡‡ç”¨Tè¡¨ç¤ºä¸€ç§ç±»å‹ï¼Œ
 	public void setY(T y) {
 		this.y = y;
 	}
-	private T y;
-
 }

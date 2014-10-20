@@ -1,30 +1,36 @@
-package com.adobe.www.generic;
+package generic;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class PointDemo {
-
 	public static void main(String[] args) {
-
-		//åˆ¶å®šèŒƒå‹æ—¶åªèƒ½ç”¨åŒ…è£…ç±»æˆ–è€…å¼•ç”¨ç±»å‹
-		//åˆ›å»ºä¸€ä¸ªå¸¦èŒƒå‹çš„å¯¹è±¡æ—¶ï¼Œå°½é‡ä¿è¯ç¼–è¯‘ç±»å‹å’Œè¿è¡ŒèŒƒå‹ä¿æŒä¸€è‡´
-		Point<Integer> point = new Point<Integer>();
-		point.setX(1);
-		point.setY(2);
 		
-		Point<Double> point2 = new Point<Double>();
-		point2.setX(1.23);
-		point2.setY(2.45);
-		
-		System.out.println(point);
-		System.out.println(point2);
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		//Ê¹ÓÃ·ºĞÍÀà
+		//¸ø¶¨·ºĞÍÀàĞÍµÄÊ±ºò,Ö»ÄÜ¸ø¶¨ÒıÓÃÀàĞÍ,
+		//´´½¨Ò»¸ö´ø·ºĞÍµÄÀàµÄ¶ÔÏóÊ±,¾¡Á¿±£Ö¤±àÒëÀàĞÍµÄ·ºĞÍºÍÔËĞĞÀàĞÍµÄ·ºĞÍÒ»ÖÂ
+		Point<Integer> p = new  Point<Integer>();
+		p.setX(1);
+		p.setY(1);	
+		Point<Double> p2 = new Point<Double>();
+		Double x = p2.getX();
+		Point<String> p3 = new Point<String>();
+		String x3 = p3.getX();
+		//============================
+		Set<String> s = new HashSet<String>();//´´½¨Ò»¸öÈİÆ÷¶ÔÏó,Ó¦¸ÃÔÚ´´½¨µÄÊ±ºò¾ÍÃ÷È·ÊÇ×°Ê²Ã´µÄ
+		s.add("a");
+		//s.add(1);//
+		//´ËÊ±¾ÍÄÜ±£Ö¤¼¯ºÏÀïÔªËØÀàĞÍÒ»ÖÂ,
+		Set<Integer> treeSet = new  TreeSet<Integer>();
+		//¹æ¶¨keyÖ»ÄÜÊÇString,valueÊÇDate
+		Map<String,Date> map = new HashMap<String,Date>();
+		// V put(K key, V value) 
+		Date v = map.put("", new Date());
+		//V get(Object key)  
+		Date val = map.get("");
 	}
-
 }
