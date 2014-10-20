@@ -26,10 +26,9 @@
  - 方法：public void flush() throws IOException
  - 两者相比，肯定使用字节流更加的方便，而且在程序中像图片、MP3等都是采用字节的方式的保存，那么肯定字节流会比字符流使用的更广泛。
  - 但是需要说明的是，如果要是想操作中文的话，字符流肯定是最好使的。
- 
- ##Java 7 新特性： 自动关闭资源的try语句
 
-    public static void afterjava7(String srcPath, String destPath) {
+##Java 7 新特性： 自动关闭资源的try语句
+    public static void afterjava7(String srcPath, String destPath){
         try (
         	InputStream is = new FileInputStream(srcPath);
             OutputStream os = new FileOutputStream(destPath);
