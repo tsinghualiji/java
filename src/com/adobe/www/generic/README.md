@@ -149,25 +149,24 @@
     1. GenericDAOImpl
         1. 实现泛型接口里的所有抽象方法
 
-    public interface IGenericDAO<T> { 
-       T get(Serializable id); 
-       T save(T newInstance); 
-       void remove(Serializable id); 
-       void update(T object); 
-    } 
-    public class GenericDAOImpl<T> implements IGenericDAO<T>{ 
-       public T get(Serializable id) { 
-           return null; 
-       } 
-       public T save(T newInstance) { 
-           return null; 
-       } 
-       public void remove(Serializable id) { 
-       }     
-       public void update(T object) { 
-       } 
-       public List<T> query() { 
-           return null; 
-       } 
-   }
-    
+	public interface IGenericDAO<T> { 
+		T get(Serializable id); 
+		T save(T newInstance); 
+		void remove(Serializable id); 
+		void update(T object); 
+	} 
+	public class GenericDAOImpl<T> implements IGenericDAO<T>{ 
+		public T get(Serializable id) { 
+			return null; 
+		} 
+		public T save(T newInstance) { 
+			return null; 
+		} 
+		public void remove(Serializable id) { 
+		}     
+		public void update(T object) { 
+		} 
+		public List<T> query() { 
+			return null; 
+		} 
+	}
