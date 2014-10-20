@@ -11,7 +11,35 @@
 	1. 节点流：直接操作目标设备，例如：磁盘或一块内存区域。
 	1. 处理流：通过操作节点流,从而间接完成输入或输出功能的流。处理流是的存在是建立在一个已经存在的输入流或输出流的基础之上的。
 - 所有流都继承于以下四种抽象流类型的某一种： 
-||字节流|字符流|
+|流|字节流|字符流|
 |------|-----|-----|
 |输入流|InputStream|Reader|
 |输出流|OutputStream|Writer|
+
+##字节流和字符流的区别：
+
+ - 字节流和字符流在使用上的代码结构都是非常类似的，但是其内部本身也是有区别的，因为在进行字符流操作的时候会使用到缓冲区，而字节流操作的时候是不会使用到缓冲区的
+ - 在输出的时候，OutputStream类即使最后没有关闭内容也可以输出。但是如果是Writer的话，则如果不关闭，最后一条内容是无法输出的，因为所有的内容都是保存在了缓冲区之中，每当调用了close()方法就意味着清空缓冲区了。那么可以证明字符流确实使用了缓冲区：
+ 	1. 字节流：程序 → 文件
+	1. 字符流：程序 → 缓冲区 → 文件
+ - 如果现在字符流即使不关闭也可以完成输出的话，则必须强制性清空缓冲区
+ - 方法：public void flush() throws IOException
+ - 两者相比，肯定使用字节流更加的方便，而且在程序中像图片、MP3等都是采用字节的方式的保存，那么肯定字节流会比字符流使用的更广泛。
+ - 但是需要说明的是，如果要是想操作中文的话，字符流肯定是最好使的。
+ 
+ ##Java 7 新特性： 自动关闭资源的try语句
+	 public static void afterjava7(String srcPath, String destPath) {
+		try (
+			InputStream is = new FileInputStream(srcPath);
+			OutputStream os = new FileOutputStream(destPath);
+		) {
+				byte[] bys = new byte[1024];
+				int len = 0;
+				while ((len = is.read(bys)) != -1) {
+					os.write(bys, 0, len);
+				}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("搞定");
+	}
