@@ -28,7 +28,8 @@
  - 但是需要说明的是，如果要是想操作中文的话，字符流肯定是最好使的。
  
  ##Java 7 新特性： 自动关闭资源的try语句
-	 public static void afterjava7(String srcPath, String destPath) {
+
+	public static void afterjava7(String srcPath, String destPath) {
 		try (
 			InputStream is = new FileInputStream(srcPath);
 			OutputStream os = new FileOutputStream(destPath);
@@ -42,4 +43,4 @@
 			e.printStackTrace();
 		}
 		System.out.println("搞定");
-	}
+    }
