@@ -149,6 +149,7 @@
 - 泛型接口实现类
     1. GenericDAOImpl
         1. 实现泛型接口里的所有抽象方法
+    
     public interface IGenericDAO<T> {
         T get(Serializable id);
         T save(T newInstance);
