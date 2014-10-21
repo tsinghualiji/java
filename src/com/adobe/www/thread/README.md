@@ -1,3 +1,4 @@
+![线程流程图](https://raw.githubusercontent.com/tsinghualiji/java/master/images/thread-life-cycle-in-java-flowchart.gif)
 [线程基础](http://www.cnblogs.com/rollenholt/archive/2011/08/28/2156357.html)
 
 ##lock与synchronized的区别：
