@@ -1,3 +1,4 @@
+[出处](http://blog.csdn.net/wangloveall/article/details/7992448)
 Java序列化与反序列化是什么？为什么需要序列化与反序列化？如何实现Java序列化与反序列化？本文围绕这些问题进行了探讨。
 
 ## 1.Java序列化与反序列化
@@ -12,7 +13,7 @@ Java序列化与反序列化是什么？为什么需要序列化与反序列化�
 
 ##3.如何实现Java序列化与反序列化
 
-1. 1）JDK类库中序列化API
+  1）JDK类库中序列化API
 
     java.io.ObjectOutputStream：表示对象输出流
 
@@ -22,11 +23,11 @@ Java序列化与反序列化是什么？为什么需要序列化与反序列化�
 
         它的readObject()方法源输入流中读取字节序列，再把它们反序列化成为一个对象，并将其返回。
 
-1. 2）实现序列化的要求
+  2）实现序列化的要求
 
     只有实现了Serializable或Externalizable接口的类的对象才能被序列化，否则抛出异常。
 
-1. 3）实现Java对象序列化与反序列化的方法
+  3）实现Java对象序列化与反序列化的方法
 
     假定一个Student类，它的对象需要序列化，可以有如下三种方法：
 
@@ -44,7 +45,7 @@ Java序列化与反序列化是什么？为什么需要序列化与反序列化�
       ObjectOutputStream调用Student对象的writeExternal(ObjectOutput out))的方法进行序列化。
       ObjectInputStream会调用Student对象的readExternal(ObjectInput in)的方法进行反序列化。
 
-1. 4）JDK类库中序列化的步骤
+  4）JDK类库中序列化的步骤
 
     步骤一：
       创建一个对象输出流，它可以包装一个其它类型的目标输出流，如文件输出流：
@@ -55,7 +56,7 @@ Java序列化与反序列化是什么？为什么需要序列化与反序列化�
       out.writeObject(“Hello”);
       out.writeObject(new Date());
 
-1. 5）JDK类库中反序列化的步骤
+  5）JDK类库中反序列化的步骤
 
     步骤一：
       创建一个对象输入流，它可以包装一个其它类型输入流，如文件输入流：
@@ -201,19 +202,16 @@ Java序列化与反序列化是什么？为什么需要序列化与反序列化�
        e.printStackTrace();  
       }               
      }  
-    }  
+    }
+
     结果如下所示：
-
     name = Tom
-
     sex = M
-
     year = 20
-
     gpa = 3.6
 
 ##总结：
 
-1. 1）Java序列化就是把对象转换成字节序列，而Java反序列化就是把字节序列还原成Java对象。
+1. Java序列化就是把对象转换成字节序列，而Java反序列化就是把字节序列还原成Java对象。
 
-1. 2）采用Java序列化与反序列化技术，一是可以实现数据的持久化，在MVC模式中很是有用；二是可以对象数据的远程通信。
+1. 采用Java序列化与反序列化技术，一是可以实现数据的持久化，在MVC模式中很是有用；二是可以对象数据的远程通信。
