@@ -1,5 +1,7 @@
 ![线程流程图](https://raw.githubusercontent.com/tsinghualiji/java/master/images/thread-life-cycle-in-java-flowchart.gif)
+![并发包](https://raw.githubusercontent.com/tsinghualiji/java/master/images/java-concurrent.png)
 [线程基础](http://www.cnblogs.com/rollenholt/archive/2011/08/28/2156357.html)
+[并发包](http://www.cnblogs.com/isoftware/p/3794340.html)
 
 ##lock与synchronized的区别：
 
