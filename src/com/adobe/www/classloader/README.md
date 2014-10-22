@@ -1,5 +1,7 @@
 ![类加载器](https://raw.githubusercontent.com/tsinghualiji/java/master/images/classloader.jpg)
+
 [动态代理详解](http://www.cnblogs.com/xiaoluo501395377/p/3383130.html)
+
 Java类加载器的作用就是在运行时加载类。Java类加载器基于三个机制：委托、可见性和单一性。委托机制是指将加载一个类的请求交给父类加载器，如果这个父类加载器不能够找到或者加载这个类，那么再加载它。可见性的原理是子类的加载器可以看见所有的父类加载器加载的类，而父类加载器看不到子类加载器加载的类。单一性原理是指仅加载一个类一次，这是由委托机制确保子类加载器不会再次加载父类加载器加载过的类。正确理解类加载器能够帮你解决NoClassDefFoundError和java.lang.ClassNotFoundException，因为它们和类的加载相关。类加载器通常也是比较高级的Java面试中的重要考题，Java类加载器和工作原理以及classpath如何运作的经常被问到。Java面试题中也经常出现“一个类是否能被两个不同类加载器加载”这样的问题。这篇教程中，我们将学到类加载器是什么，它的工作原理以及一些关于类加载器的知识点。
 
 ##什么是类加载器
