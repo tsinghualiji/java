@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class MyClassLoader {
+public class MyClassLoader extends ClassLoader{
 
 	/**
 	 * @param args
@@ -21,8 +21,8 @@ public class MyClassLoader {
 		cypher(fiStream, foStream);
 		fiStream.close();
 		foStream.close();
+		
 	}
-
 	
 	private static void cypher(InputStream in, OutputStream out)throws Exception{
 		
@@ -32,4 +32,32 @@ public class MyClassLoader {
 		}
 		
 	}
+	
+	@Override
+	public Class<?> loadClass(String name) throws ClassNotFoundException {
+		// TODO Auto-generated method stub
+		return super.loadClass(name);
+	}
+
+	@Override
+	protected Class<?> findClass(String name) throws ClassNotFoundException {
+		// TODO Auto-generated method stub
+		//找到class文件存放的目录
+		
+		//FileInputStream加载class文件
+		
+		//un-cypher
+		
+		//defineClass
+		return null;
+	}
+
+	public MyClassLoader(){}
+	
+	public MyClassLoader(String classpath){
+		this.classpath = classpath;
+	}
+	
+	public String classpath;
+	
 }
