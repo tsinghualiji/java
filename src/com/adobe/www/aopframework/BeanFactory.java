@@ -1,12 +1,11 @@
 package com.adobe.www.aopframework;
 
 /**
- * BeanFactory用来获取bean. 实际上就是用来获取Proxy。
+ * BeanFactory用来获取bean. 实际上就是用来获取Proxy
  */
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-
 
 public class BeanFactory {
 	
@@ -25,7 +24,7 @@ public class BeanFactory {
 		Object bean = null;
 		try {
 			clazz = Class.forName(className);
-			bean = clazz.newInstance();
+			bean = clazz.newInstance();//调用无参的构造方法
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 

@@ -2,7 +2,6 @@ package com.adobe.www.aopframework;
 
 import java.lang.reflect.Method;
 
-
 public class MyAdvice implements Advice {
 
 	@Override

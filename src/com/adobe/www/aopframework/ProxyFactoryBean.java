@@ -39,8 +39,8 @@ public class ProxyFactoryBean {
 							Object[] args) throws Throwable {
 						advice.beforeMethod(method);
 						Object retVal = method.invoke(target, args);
-						advice.afterMethod(method);
 						System.out.println(method.getName());
+						advice.afterMethod(method);
 						return retVal;
 					}
 				}

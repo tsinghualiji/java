@@ -1,6 +1,7 @@
 package com.adobe.www.aopframework;
 
 import java.io.InputStream;
+import java.util.Collection;
 
 public class AopFramworkTest {
 
@@ -12,6 +13,7 @@ public class AopFramworkTest {
 		InputStream ips = AopFramworkTest.class.getResourceAsStream("config.properties");
 		Object bean = new BeanFactory(ips).getBean("xxx");
 		System.out.println(bean.getClass().getName());
+		((Collection)bean).add(new Object());
 	}
 
 }
