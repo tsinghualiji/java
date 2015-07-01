@@ -1,4 +1,4 @@
-package innerclass;
+package com.adbe.www.innerclass;
 
 class Outer1
 {

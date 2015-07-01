@@ -10,7 +10,7 @@ class  A{
 }
 public class GenericMethodDemo {
 	public static void main(String[] args) {
-		//µ÷ÓÃ·½·¨µÄÊ±ºò,²ÅÄÜÈ·¶¨ÆäÕæÕıµÄÀàĞÍ
+		//ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		show(1);
 		show("");	
 		show(new A());
@@ -19,7 +19,7 @@ public class GenericMethodDemo {
 		System.out.println("-->"+show2(new Date()).getClass());
 		System.out.println("-->"+show2(new int[]{}).getClass());
 		//=======================
-		//Arrays :static <T> List<T> asList(T... a)  ·µ»ØÒ»¸ö¹Ì¶¨´óĞ¡µÄÁĞ±í¡£ 	
+		//Arrays :static <T> List<T> asList(T... a)  ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ï¿½Ğ¡ï¿½ï¿½ï¿½Ğ±? 	
 		int[] arr   = {1,2,3};
 		List<int[]> list = Arrays.asList(arr);
 		System.out.println("list==" + list);
@@ -36,7 +36,7 @@ public class GenericMethodDemo {
 		for (Integer i : list2) {
 			System.out.println(i);
 		}	
-		//========¿É±ä²ÎÊı========
+		//========ï¿½É±ï¿½ï¿½ï¿½ï¿½========
 		list2 = Arrays.asList(1,2,3,4);
 		List<String> s  = Arrays.asList("","","");
 	}
@@ -51,10 +51,10 @@ public class GenericMethodDemo {
 	}
 	
 	/**
-	 * <T>±íÊ¾ÉùÃ÷Ê¹ÓÃ T ±íÊ¾Ò»ÖÖÀàĞÍ, ×÷ÓÃÓò½ö½öÔÚ¸Ã·½·¨Àà
+	 * <T>ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ T ï¿½ï¿½Ê¾Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸Ã·ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param t
 	 */
 	public static <T> void show(T t) {
-		System.out.println(t.getClass());//»ñµÃ¶ÔÏóµÄÕæÕıÀàĞÍ
+		System.out.println(t.getClass());//ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 }

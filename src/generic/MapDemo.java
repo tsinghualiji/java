@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * ·ºÐÍÇ¶Ì×
+ * ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½
  */
 public class MapDemo {
 	public static void main(String[] args) {
@@ -18,13 +18,13 @@ public class MapDemo {
 		map.put(3, "C");
 		map.put(4, "D");
 		
-		//µü´ú³öMapÀïµÄÃ¿Ò»¸ökey ºÍ value
+		//ï¿½ï¿½ï¿½ï¿½Mapï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½key ï¿½ï¿½ value
 		
 		Set<Map.Entry<Integer,String>> entrys = map.entrySet();
 		Iterator<Map.Entry<Integer, String>> it = entrys.iterator();
 		while(it.hasNext()){
 			
-			Map.Entry<Integer, String> entry = it.next();//Ã¿Ò»¸öEnter
+			Map.Entry<Integer, String> entry = it.next();//Ã¿Ò»ï¿½ï¿½Enter
 			
 			Integer key = entry.getKey();
 			String value = entry.getValue();

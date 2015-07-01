@@ -17,7 +17,7 @@ class Person implements Comparable<Person>{
 	}
 	
 	/*public int compareTo(Object o) {
-		//强转o为Person类型
+		//强转o为Person锟斤拷锟斤拷
 		
 		Person p = (Person) o;
 		return this.age.compareTo(p.age);

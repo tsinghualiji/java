@@ -7,8 +7,6 @@ import java.beans.PropertyDescriptor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import com.adobe.www.ReflectPoint;
-
 public class IntroSpectorTest {
 
 	public static void main(String[] args) throws Exception{
